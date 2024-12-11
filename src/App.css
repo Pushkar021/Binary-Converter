@@ -1,21 +1,22 @@
-/* App.css */
 body {
   margin: 0;
   padding: 0;
-  background-color: #121212; /* Dark background */
-  color: #ffffff; /* Text color */
+  background-color: #121212; 
+  color: #ffffff;
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden; /* No unnecessary scrolling */
 }
 
 .main-container {
-  background-color: #1e1e1e; /* Slightly lighter dark shade for contrast */
+  background-color: #1e1e1e; 
   padding: 40px;
   border-radius: 12px;
-  width: 80%;
+  width: 80%; 
+  max-width: 600px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,27 +25,28 @@ body {
 
 h1 {
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #00ffff; /* Neon accent color */
+  font-size: 24px; 
+  color: #00ffff; 
   text-align: center;
 }
 
 input[type="text"], 
 textarea {
-  width: 80%;
+  width: 100%; 
+  max-width: 500px; 
   padding: 10px;
   margin: 10px 0;
   border-radius: 8px;
   border: none;
   outline: none;
   font-size: 16px;
-  background-color: #2c2c2c; /* Input background */
-  color: #ffffff; /* Text color */
+  background-color: #2c2c2c; 
+  color: #ffffff; 
   resize: none;
 }
 
 textarea {
-  height: 100px;
+  height: 120px; 
 }
 
 button {
@@ -69,3 +71,29 @@ button:active {
   box-shadow: 0px 2px 10px rgba(0, 255, 255, 0.4);
 }
 
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  .main-container {
+    width: 90%; 
+    padding: 20px; 
+  }
+
+  h1 {
+    font-size: 20px; 
+  }
+
+  input[type="text"], 
+  textarea {
+    padding: 15px; 
+    font-size: 18px;
+  }
+
+  textarea {
+    height: 150px; 
+  }
+
+  button {
+    font-size: 18px; 
+    padding: 12px 25px;
+  }
+}
