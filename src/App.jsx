@@ -1,54 +1,100 @@
-import { useState } from "react";
-import "./App.css";
-import toast, { Toaster } from "react-hot-toast";
 
-function App() {
-  const [getval, setval] = useState("");
-  const [getop, setop] = useState("");
-
-  const handleclick = () => {
-    main(getval);
-  };
-
-  const notify = () => {
-    if (getop) {
-      navigator.clipboard.writeText(getop); 
-      toast.success("Copied to clipboard!"); 
-    } else {
-      toast.error("No binary output to copy!"); 
-    }
-  };
-
-  function main(text) {
-    let x = text
-      .split("")
-      .map((char) => char.charCodeAt(0).toString(2))
-      .join(" ");
-    setop(x);
-  }
-
-  return (
-    <>
-      <div className="main-container">
-        <Toaster /> 
-        <h1>Binary Converter</h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Paste your text here..."
-            onChange={(e) => setval(e.target.value)}
-          />
-        </div>
-        <div>
-          <textarea value={getop} readOnly />
-        </div>
-          <button onClick={notify}>Copy</button>
-        <div>
-          <button onClick={handleclick}>Convert</button>
-        </div>
-      </div>
-    </>
-  );
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212; 
+  color: #ffffff; 
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden; 
+  overflow-y: auto; 
 }
 
-export default App;
+.main-container {
+  background-color: #1e1e1e; 
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%; 
+  max-width: 500px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px; 
+  color: #00ffff; 
+  text-align: center;
+}
+
+input[type="text"], 
+textarea {
+  width: 100%; 
+  padding: 20px; 
+  margin: 20px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px; 
+  background-color: #2c2c2c; 
+  color: #ffffff; 
+  resize: none;
+}
+
+textarea {
+  height: 150px; 
+}
+
+button {
+  padding: 15px 30px; 
+  margin-top: 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px; 
+  background: linear-gradient(45deg, #00ffff, #ff00ff); 
+  color: #121212;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.6);
+}
+
+button:active {
+  transform: scale(1);
+  box-shadow: 0px 2px 10px rgba(0, 255, 255, 0.4);
+}
+
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 90%; 
+    padding: 30px; 
+  }
+
+  h1 {
+    font-size: 28px; 
+  }
+
+  input[type="text"], 
+  textarea {
+    font-size: 18px; 
+    padding: 15px; 
+  }
+
+  textarea {
+    height: 120px; 
+  }
+
+  button {
+    font-size: 18px; 
+    padding: 12px 25px;
+  }
+}
