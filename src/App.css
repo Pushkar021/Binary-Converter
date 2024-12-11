@@ -1,3 +1,4 @@
+/* App.css */
 body {
   margin: 0;
   padding: 0;
@@ -76,6 +77,7 @@ button:active {
   .main-container {
     width: 90%; 
     padding: 20px; 
+    margin-bottom: 200px;
   }
 
   h1 {
@@ -83,13 +85,19 @@ button:active {
   }
 
   input[type="text"], 
+  input{
+    width: 95%;
+    margin-right: 40px;
+   
+  }
   textarea {
-    padding: 15px; 
+    padding: 30px; 
     font-size: 18px;
   }
 
   textarea {
     height: 150px; 
+    width: 80%;
   }
 
   button {
