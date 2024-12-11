@@ -1,24 +1,23 @@
-
+/* App.css */
 body {
   margin: 0;
   padding: 0;
   background-color: #121212; 
-  color: #ffffff; 
+  color: #ffffff;
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow-x: hidden; 
-  overflow-y: auto; 
+  overflow: hidden; /* No unnecessary scrolling */
 }
 
 .main-container {
   background-color: #1e1e1e; 
   padding: 40px;
   border-radius: 12px;
-  width: 100%; 
-  max-width: 500px; 
+  width: 80%; 
+  max-width: 600px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +26,7 @@ body {
 
 h1 {
   margin-bottom: 20px;
-  font-size: 32px; 
+  font-size: 24px; 
   color: #00ffff; 
   text-align: center;
 }
@@ -35,27 +34,28 @@ h1 {
 input[type="text"], 
 textarea {
   width: 100%; 
-  padding: 20px; 
-  margin: 20px 0;
-  border-radius: 10px;
+  max-width: 500px; 
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
   border: none;
   outline: none;
-  font-size: 18px; 
+  font-size: 16px;
   background-color: #2c2c2c; 
   color: #ffffff; 
   resize: none;
 }
 
 textarea {
-  height: 150px; 
+  height: 120px; 
 }
 
 button {
-  padding: 15px 30px; 
-  margin-top: 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
   border-radius: 8px;
   border: none;
-  font-size: 18px; 
+  font-size: 16px;
   background: linear-gradient(45deg, #00ffff, #ff00ff); 
   color: #121212;
   cursor: pointer;
@@ -72,25 +72,25 @@ button:active {
   box-shadow: 0px 2px 10px rgba(0, 255, 255, 0.4);
 }
 
-
+/* Media Query for Mobile View */
 @media (max-width: 768px) {
   .main-container {
     width: 90%; 
-    padding: 30px; 
+    padding: 20px; 
   }
 
   h1 {
-    font-size: 28px; 
+    font-size: 20px; 
   }
 
   input[type="text"], 
   textarea {
-    font-size: 18px; 
     padding: 15px; 
+    font-size: 18px;
   }
 
   textarea {
-    height: 120px; 
+    height: 150px; 
   }
 
   button {
