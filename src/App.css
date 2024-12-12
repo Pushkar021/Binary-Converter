@@ -56,7 +56,19 @@ button {
   border-radius: 8px;
   border: none;
   font-size: 16px;
-  background: linear-gradient(45deg, #00ffff, #ff00ff); 
+  /* background: linear-gradient(45deg, #00ffff, #ff00ff);  */
+  color: #121212;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+select {
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
   color: #121212;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -77,7 +89,8 @@ button:active {
   .main-container {
     width: 90%; 
     padding: 20px; 
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    height: 650px;
   }
 
   h1 {
@@ -98,10 +111,39 @@ button:active {
   textarea {
     height: 150px; 
     width: 80%;
+    margin-bottom: 100px;
   }
 
   button {
     font-size: 18px; 
     padding: 12px 25px;
   }
+}
+
+
+
+
+.github {
+  
+  margin-top: 20px;
+}
+
+.github a {
+  color: white;
+  text-decoration: none;
+
+  padding: 10px 20px;
+  border-radius: 5px;
+ 
+  font-family: "Roboto", sans-serif;
+}
+.github a i {
+  font-size: 24px;
+  
+ 
+}
+
+.github a:hover {
+  color: #555;
+  
 }
